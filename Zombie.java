@@ -12,11 +12,11 @@ public class Zombie
     //atributos
     private String nombre; 
     private int salud;
-    private Date date;
+    private int date;
     private String tipoDeSangre;
     
     // mètodo
-    public Zombie(String nombre, int salud, Date date, String tipoDeSangre)
+    public Zombie(String nombre, int salud, int date, String tipoDeSangre)
     {
         this.nombre= nombre;
         this.salud= salud;
@@ -34,7 +34,7 @@ public class Zombie
     {
         this.salud=salud;
     }
-    public void setDate(Date date)
+    public void setDate(int date)
     {
         this.date=date;
     }
@@ -42,7 +42,7 @@ public class Zombie
     {
         this.tipoDeSangre=tipoDeSangre;
     }
-    //getter
+    //getters
     public String getNombre()
     {
         return nombre;
@@ -51,7 +51,7 @@ public class Zombie
     {
         return salud;
     }
-    public Date getDate()
+    public int getDate()
     {
         return date;
     }
@@ -60,10 +60,36 @@ public class Zombie
         return tipoDeSangre;
     }
     
-    public int imprimir()
+    public static void arregloPunto4(Zombie[] arreglo)
     {
-        return 1;
+        for(int i =0; i<arreglo.length; i++)
+        {
+            if(arreglo[i].getTipoDeSangre()=="O+" || arreglo[i].getTipoDeSangre()=="AB+")
+            {
+                System.out.println(arreglo[i].getNombre()+arreglo[i].getSalud() + arreglo[i].getDate()+ arreglo[i].getTipoDeSangre());
+            }
+        }
     }
+    
+    public static void arregloPunto5(Zombie[] arreglo)
+    {
+        for( int i=0; i<arreglo.length; i++)
+        {
+            if( arreglo[i].getDate()>2000)
+            {
+                System.out.println(arreglo[i].getNombre()+arreglo[i].getSalud() + arreglo[i].getDate()+ arreglo[i].getTipoDeSangre());
+            }
+        }
+    }
+    
+    public static void arregloPunto6(Zombie[] arreglo)
+    {
+        for (int i=0; i<arreglo.length; i++)
+        {
+            System.out.println(arreglo[i].getNombre()+arreglo[i].getSalud()/2 + arreglo[i].getDate()+ arreglo[i].getTipoDeSangre());
+        }
+    }
+    
 }
     
 
