@@ -15,7 +15,7 @@ public class Zombie
     private Date date;
     private String tipoDeSangre;
     
-    // mètodo
+    // mÃ¨todo
     public Zombie(String nombre, int salud, Date date, String tipoDeSangre)
     {
         this.nombre= nombre;
@@ -62,7 +62,6 @@ public class Zombie
     
     public int imprimir()
     {
-        System.out.println(1);
         return 1;
     }
 }
