@@ -1,4 +1,3 @@
-
 import java.util.ArrayList;
 public class Ubicacion implements Comparable<Ubicacion>
 {
@@ -6,41 +5,40 @@ public class Ubicacion implements Comparable<Ubicacion>
   private double distancia;
   private int cantZombies;
   public static ArrayList<Ubicacion> puntos = new ArrayList<>();
-  
+
   public Ubicacion(String nombre, double distancia, int cantZombies)
   {
-    this.nombre= nombre;
-    this.distancia= distancia;
-    this.cantZombies= cantZombies;
-    Ubicacion.puntos.add(this);
+      this.nombre= nombre;
+      this.distancia= distancia;
+      this.cantZombies= cantZombies;
+      Ubicacion.puntos.add(this);
   }
-    //setters
+  
   public void setNombre(String nombre)
   {
     this.nombre=nombre;
   }
-    
+
   public void setDistancia(double distancia)
   {
     this.distancia=distancia;
   }
-    
+
   public void setCantZombies( int cantZombies)
   {
-    this.cantZombies= cantZombies;
+      this.cantZombies= cantZombies;
   }
-    
-    //getters
+
   public String getNombre()
   {
     return nombre;
   }
-    
+
   public double getDistancia()
   {
     return distancia;
   }
-    
+
   public int getCantZombies()
   {
     return cantZombies;
@@ -49,57 +47,58 @@ public class Ubicacion implements Comparable<Ubicacion>
   public static String  casoOcho()
   {
     String contador= "";
-    
+
     if(Ubicacion.puntos.size()>0)
     {
       for(int x = 0; x<Ubicacion.puntos.size();x++)
       {
         Ubicacion a = Ubicacion.puntos.get(x);
-        contador= contador+"Esta es la ubicacion # " + x+ ", el nombre de esta es " + a.getNombre() + ", su distancia con respecto a Alexandría es " +a.getDistancia() + " y la cantidad de zombies que se encuentran en este lugar es de " + a.getCantZombies()+"\n";
+        contador= contador+"Esta es la ubicacion # " + x + ", el nombre de esta es " + a.getNombre() + ", su distancia con respecto a alexandria es " +a.getDistancia() + " y la cantidad de zombies que se encuentran en este lugar es " + a.getCantZombies()+"\n";
       }
     }
-        else
-        {
-            contador="No se ha añadido información sobre una ubicación en especifico";
-        }
-      return contador;  
+    else
+    {
+      contador="No se ha aÃ±adido informaciÃ³n sobre una ubicaciÃ³n en especifico";
     }
-
-
-  
-  //punto 9
+    return contador;
+  }
+    
   public static Ubicacion casoNueve()
   {
-    int menor = 0;
+    int menor = -1;
+      
     for(int i = 0; i < puntos.size(); i++)
     {
       Ubicacion a = puntos.get(i);
-      if(menor == 0){
+        
+      if(menor == -1)
+      {
         menor = a.getCantZombies();
       }
       else if( a.getCantZombies() < menor)
       {
-         menor = a.getCantZombies();
+        menor = a.getCantZombies();
       }
     }
+       
     Ubicacion m = new Ubicacion("", 0, 0);
+      
     for(int x = 0; x < puntos.size(); x++)
     {
       Ubicacion b = puntos.get(x);
       if(menor == b.getCantZombies())
       {
-        m = b;
-        break;
+       m = b;
+       break;
       }
     }
     return m;
   }
 
-  // punto 10
+    // punto 10
   public String toString() 
   {
-      
-   return  "La ubicación es " + nombre + ", con distancia " + distancia + " de Alexandría,  y la cantidad de Zombies es de " + cantZombies + '}';
+    return "Nombre de la ubicaciÃ³n: {" + "nombre= " + nombre + ", distancia= " + distancia + ", cantidad de Zombies= " + cantZombies + '}';
   }
 
   public int compareTo(Ubicacion u)
@@ -108,41 +107,41 @@ public class Ubicacion implements Comparable<Ubicacion>
     {
       return -1;
     }
-    else if(u.getDistancia()>distancia)
+    else if(u.getDistancia()==distancia)
     {
       return 0;
     }
     else
     {
-    return 1;
+      return 1;
     }
   }
-
-   public static Ubicacion casoDoce()
-   {
-    int mayor = 0;
+    // punto 12
+  public static Ubicacion casoDoce()
+  {
+    int mayor = -1;
     for(int i = 0; i < puntos.size();i++)
     {
       Ubicacion a = puntos.get(i);
-      if(mayor == 0)
+      if(mayor == -1)
       {
         mayor = a.getCantZombies();
       }
       else if( a.getCantZombies() > mayor)
       {
-         mayor = a.getCantZombies();
+        mayor = a.getCantZombies();
       }
     }
-    Ubicacion m = new Ubicacion(" ", 0, 0);
+    Ubicacion inicializar = new Ubicacion("", 0, 0);
     for(int x = 0; x < puntos.size(); x++)
     {
-      Ubicacion b = puntos.get(x);
-      if(mayor == b.getCantZombies())
+      Ubicacion ubicacionArreglo = puntos.get(x);
+      if(mayor == ubicacionArreglo.getCantZombies())
       {
-        m = b;
+        inicializar = ubicacionArreglo;
         break;
       }
     }
-    return m;
+    return inicializar;
   }
 }
