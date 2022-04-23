@@ -91,7 +91,7 @@ public class Zombie
       for(int x = 0; x<Zombie.zombies.size();x++)
       {
         Zombie a = Zombie.zombies.get(x);
-        contador= contador+"Este es el zombie # " + x + ", su nombre es " + a.getNombre() + ", su numero en salud es " +a.getSalud() + ", su tipo de sangre es " + a.getTipoDeSangre() + " y naciÃ³ el dia " + a.getDia() + " del mes " + a.getMes() +" del aÃ±o " + a.getDate() +"\n";
+        contador= contador+"Este es el zombie # " + x + ", su nombre es " + a.getNombre() + ", su numero en salud es " +a.getSalud() + ", su tipo de sangre es " + a.getTipoDeSangre() + " y nació el dia " + a.getDia() + " del mes " + a.getMes() +" del año " + a.getDate() +"\n";
       }
     }
     else
@@ -117,7 +117,7 @@ public class Zombie
         Zombie a = Zombie.zombies.get(x);
         if (a.getTipoDeSangre().equalsIgnoreCase("o+") || a.getTipoDeSangre().equalsIgnoreCase("ab+"))
         {
-          contador= contador+"Este es el zombie # " + x + ", su nombre es " + a.getNombre() + ", su numero en salud es " +a.getSalud() + ", su tipo de sangre es " + a.getTipoDeSangre() + " y naciÃ³ el dia " + a.getDia() + " del mes " + a.getMes() +" del aÃ±o " + a.getDate() +"\n";
+          contador= contador+"Este es el zombie # " + x + ", su nombre es " + a.getNombre() + ", su numero en salud es " +a.getSalud() + ", su tipo de sangre es " + a.getTipoDeSangre() + " y nació el dia " + a.getDia() + " del mes " + a.getMes() +" del año " + a.getDate() +"\n";
         }
       }
     }
@@ -137,7 +137,7 @@ public class Zombie
       Zombie a = Zombie.zombies.get(i);
       if( a.getDate()>2000)
       {
-        contadorString = contadorString + "Este es el zombie # " + i + ", su nombre es " + a.getNombre() + ", su numero en salud es " +a.getSalud() + ", su tipo de sangre es " + a.getTipoDeSangre() + " y naciÃ³ el dia " + a.getDia() + " del mes " + a.getMes() +" del aÃ±o " + a.getDate() +"\n";
+        contadorString = contadorString + "Este es el zombie # " + i + ", su nombre es " + a.getNombre() + ", su numero en salud es " +a.getSalud() + ", su tipo de sangre es " + a.getTipoDeSangre() + " y nació el dia " + a.getDia() + " del mes " + a.getMes() +" del año " + a.getDate() +"\n";
       }
     }
     return contadorString;
@@ -148,8 +148,9 @@ public class Zombie
     String contador= "";
     for( int i=0; i<Zombie.zombies.size(); i++)
     {
+      zombies.get(i).setSalud(zombies.get(i).getSalud()/2);
       Zombie a= Zombie.zombies.get(i);
-      contador= contador+"Este es el zombie # " + i + ", su nombre es " + a.getNombre() + ", su numero en salud es " +a.getSalud()/2 + ", su tipo de sangre es " + a.getTipoDeSangre() + " y naciÃ³ el dia " + a.getDia() + " del mes " + a.getMes() +" del aÃ±o " + a.getDate() +"\n";
+      contador= contador+"Este es el zombie # " + i + ", su nombre es " + a.getNombre() + ", su nuevo numero en salud es " +a.getSalud() + ", su tipo de sangre es " + a.getTipoDeSangre() + " y nacio el dia " + a.getDia() + " del mes " + a.getMes() +" del año " + a.getDate() +"\n";
     }
     return contador;
   }
@@ -157,10 +158,10 @@ public class Zombie
 
   public static String casoOnce()
   {
-    String frase1 = "SegÃºn la tradiciÃ³n zombie, la Ãºnica manera de matar a uno de estos es daÃ±ar su cerebro o cortar su cabeza.";
+    String frase1 = "Segun la tradicion zombie, la unica manera de matar a uno de estos es dañar su cerebro o cortar su cabeza.";
     String frase2 = "Cada ser humano que salvamos es un zombie menos que combatir.";
     String frase3 = "Los zombies son los unicos hombres que te aman por tu cerebro.";
-    String frase4 = "En el caso de un brote de zombies, la aptitud fÃ­sica de una persona tendrÃ¡ una influencia significativa en las probabilidades de supervivencia de la misma.";
+    String frase4 = "En el caso de un brote de zombies, la aptitud física de una persona tendra una influencia significativa en las probabilidades de supervivencia de la misma.";
     String frase5 = "La mejor arma para matar zombies es una escopeta o una metralleta.";
     String Frase = "";
     Random r = new Random();
@@ -182,4 +183,3 @@ public class Zombie
   }
   
 }
-    

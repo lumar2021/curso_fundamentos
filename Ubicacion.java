@@ -1,5 +1,5 @@
 import java.util.ArrayList;
-public class Ubicacion implements Comparable<Ubicacion>
+public class Ubicacion 
 {
   private String nombre;
   private double distancia;
@@ -58,7 +58,7 @@ public class Ubicacion implements Comparable<Ubicacion>
     }
     else
     {
-      contador="No se ha añadido información sobre una ubicación en especifico";
+      contador="No se ha a�adido informacion sobre una ubicacion en especifico";
     }
     return contador;
   }
@@ -95,28 +95,52 @@ public class Ubicacion implements Comparable<Ubicacion>
     return m;
   }
 
-    // punto 10
+
   public String toString() 
   {
-    return "Nombre de la ubicación: {" + "nombre= " + nombre + ", distancia= " + distancia + ", cantidad de Zombies= " + cantZombies + '}';
+    return "Nombre de la ubicacion: {" + "nombre= " + nombre + ", distancia= " + distancia + ", cantidad de Zombies= " + cantZombies + '}';
   }
 
-  public int compareTo(Ubicacion u)
-  {
-    if(u.getDistancia()>distancia)
-    {
-      return -1;
+  public static void ordenamiento(ArrayList<Ubicacion> puntos,int numeros){
+        int posicionMenor;
+        double temp;
+        for (int i = 0; i < numeros - 1; i++) {
+            posicionMenor = i;
+            for (int j = i + 1; j < numeros; j++) {
+                if (puntos.get(j).getDistancia() < puntos.get(posicionMenor).getDistancia()){
+                    posicionMenor = j;
+                }
+            }
+            temp = puntos.get(i).getDistancia();
+            puntos.get(i).setDistancia(puntos.get(posicionMenor).getDistancia());
+            puntos.get(posicionMenor).setDistancia(temp);
+        }
     }
-    else if(u.getDistancia()==distancia)
+  
+  public static String casoDiez()
+  {
+    String contadorString="";
+    if(puntos.size() == 0)
     {
-      return 0;
+      contadorString="No hay informacion de ninguna ubicacion";
     }
     else
     {
-      return 1;
+      Ubicacion.ordenamiento(puntos,puntos.size());
+      contadorString=contadorString+"\n Ordenamiento de ubicaciones de la ciudad con respecto a Alexandria:";
+       
+      for(int i=0; i<puntos.size(); i++)
+      {
+        contadorString=contadorString+"\nLa ubicacion # " + (i+1) + " : ";
+        contadorString=contadorString+"tiene como nombre " + puntos.get(i).getNombre();
+        contadorString=contadorString+", cuya distancia respecto a Alexandria es de " + puntos.get(i).getDistancia();
+        contadorString=contadorString+" y tiene " + puntos.get(i).getCantZombies() + "zombies a su alrededor.";
+      }
     }
+    return contadorString;
   }
-    // punto 12
+  
+   
   public static Ubicacion casoDoce()
   {
     int mayor = -1;
