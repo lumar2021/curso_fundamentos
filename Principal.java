@@ -15,19 +15,19 @@ public class Principal
     while (trueOrFalse)
     {
       System.out.println("Ingrese por favor un numero del 0 al 12, segun el caso que desee de las sigueintes opciones:");
-      System.out.println("Si ingresa el numero #0, finalizara el programa");
-      System.out.println("Si ingresa el numero #1, creara un zombie");
-      System.out.println("Si ingresa el numero #2, vera la informacion de todos los zombies almacenados hasta el momento");
-      System.out.println("Si ingresa el numero #3, vera la cantidad zombies creados hasta el momento");
-      System.out.println("Si ingresa el numero #4, vera la informacion de los zombies con con tipo de sangre 'O+' o 'AB+'");
-      System.out.println("Si ingresa el numero #5, vera la informacion de los zombies que nacieron después del 2000");
-      System.out.println("Si ingresa el numero #6, lanzara una bomba a los zombies, y reducira la salud de todos estos a la mitad");
+      System.out.println("Si ingresa el numero #0, finalizará el programa");
+      System.out.println("Si ingresa el numero #1, creará un zombie");
+      System.out.println("Si ingresa el numero #2, verá la informacion de todos los zombies almacenados hasta el momento");
+      System.out.println("Si ingresa el numero #3, verá la cantidad zombies creados hasta el momento");
+      System.out.println("Si ingresa el numero #4, verá la información de los zombies con tipo de sangre 'O+' o 'AB+'");
+      System.out.println("Si ingresa el numero #5, verá la información de los zombies que nacieron después del 2000");
+      System.out.println("Si ingresa el numero #6, lanzará una bomba a los zombies, y reducira la salud de todos estos a la mitad");
       System.out.println("Si ingresa el numero #7, va a añadir información sobre zombies en un lugar en especifico");
-      System.out.println("Si ingresa el numero #8, vera la informacion de todas las ubicaciones almacenadas hasta el momento");
-      System.out.println("Si ingresa el numero #9, vera la ubicación más segura en la ciudad");
-      System.out.println("Si ingresa el numero #10, vera todas las ubicaciones de la ciudad organizadas de menor a mayor");
-      System.out.println("Si ingresa el numero #11, vera alguna frase aleatoria sobre los zombies");
-      System.out.println("Si ingresa el numero #12, vera una funcionalidad especial, la cual dirá cual es la ubicacion mas peligrosa");
+      System.out.println("Si ingresa el numero #8, verá la información de todas las ubicaciones almacenadas hasta el momento");
+      System.out.println("Si ingresa el numero #9, verá la ubicación más segura en la ciudad");
+      System.out.println("Si ingresa el numero #10, verá todas las ubicaciones de la ciudad organizadas de menor a mayor");
+      System.out.println("Si ingresa el numero #11, verá alguna frase aleatoria sobre los zombies");
+      System.out.println("Si ingresa el numero #12, verá una funcionalidad especial, la cual dirá cual es la ubicacion mas peligrosa");
       System.out.print("Ingrese aqui su numero ===> ");
 
       int num = teclado.nextInt();
@@ -179,6 +179,11 @@ public class Principal
     separadorDos();
   }
 }
+
+
+
+
+
 
 
 
